@@ -1,19 +1,20 @@
 import {SVG_NS} from '../settings'
 
 export default class Board {
+    
     constructor(width, height) {
         this.width = width
         this.height = height
     }
 
     render(svg) {
-        console.log(`In Board.js {this.width}, {this.height}`)
+        //console.log(`In Board.js {this.width}, {this.height}`)
         /* create/draw the board */
         let rect = document.createElementNS(SVG_NS, 'rect')
 
         rect.setAttributeNS(null, 'width', this.width)
         rect.setAttributeNS(null, 'height', this.height)
-        rect.setAttributeNS(null, 'fill', '#353535')
+        rect.setAttributeNS(null, 'fill', '#1390900')
 
         let line = document.createElementNS(SVG_NS, 'line')
         //your code here
@@ -29,7 +30,7 @@ export default class Board {
         /* DO NOT CREATE PADDLES HERE, That is done in paddle class */
 
         // constructor(boardHeight, width, height, x, y)
-        svg.appendChild(rect)
+        svg.appendChild(rect)   
         svg.appendChild(line)
     }
 }

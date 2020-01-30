@@ -5,5 +5,5 @@ export const KEYS = {
     z: "z", //
     up: "ArrowUp", //
     down: "ArrowDown", //
-    spaceBar: " " //
+    spaceBar: " ", // pause game with no warning text  
 };
