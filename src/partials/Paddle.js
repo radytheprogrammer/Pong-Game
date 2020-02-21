@@ -10,6 +10,8 @@ export default class Paddle {
         this.y = y
         this.speed = 18
         this.score = 0
+        this.name = name
+        
         document.addEventListener('keydown',  event => {
             switch(event.key) {
                 case up:

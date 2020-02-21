@@ -78,10 +78,19 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100%;
+  background-image: url(https://media.giphy.com/media/XbsB79zhtQB9eUsBaU/giphy.gif);
+  background-repeat: no-repeat;
+  background-size: 500px 300px;
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem; 
+  text-align: center;
+}
+
+.gameOver{
+  font-size: 28px;
+  font-family: 'Silkscreen Web', monotype;
   text-align: center;
 }

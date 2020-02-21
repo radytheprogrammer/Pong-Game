@@ -14,7 +14,7 @@ export default class Game {
     this.gameElement = document.getElementById(this.element);    // 
     this.board = new Board(this.width, this.height); /* instantiate svg object */
     this.paddWidth = 8;
-    this.paddHeight = 56;
+    this.paddHeight = 54;
     this.boardGap = 10;    
     
     this.player1 = new Paddle(  /* instantiate svg object */
@@ -24,7 +24,8 @@ export default class Game {
       this.boardGap,
       (this.height - this.paddHeight) / 2,
       KEYS.a,
-      KEYS.z
+      KEYS.z,
+      "Player 1"
     );
     
     this.player2 = new Paddle( /* instantiate svg object */
@@ -34,7 +35,8 @@ export default class Game {
       (this.width - this.boardGap - this.paddWidth),
       (this.height - this.paddHeight) / 2,
       KEYS.up,
-      KEYS.down
+      KEYS.down,
+      "Player 2"
     );
 
     this.score1 = new Score(
@@ -62,35 +64,41 @@ export default class Game {
 
   } // end of constructor
   
-    render() {
+  render() {
 
-        if(this.pause){
-          /* to pause the game, simply return */
-          return 
-        }
+      if(this.pause){
+        /* to pause the game, simply return */
+        return 
+      }
 
-        // clear the svg canvas each time
-        this.gameElement.innerHTML = "";
-        // empty canvas created each time render() is called
-        let svg = document.createElementNS(SVG_NS, "svg");
-        svg.setAttributeNS(null, "width", this.width);
-        svg.setAttributeNS(null, "height", this.height);
+      // clear the svg canvas each time
+      this.gameElement.innerHTML = "";
+      // empty canvas created each time render() is called
+      let svg = document.createElementNS(SVG_NS, "svg");
+      svg.setAttributeNS(null, "width", this.width);
+      svg.setAttributeNS(null, "height", this.height);
 
-        this.gameElement.appendChild(svg);
-        
-        this.board.render(svg); // LOL, board doesn't appear
+      this.gameElement.appendChild(svg);
+      
+      this.board.render(svg); // LOL, board doesn't appear
 
-        /* render the paddles */
-        this.player1.render(svg);
-        this.player2.render(svg);
+      /* render the paddles */
+      this.player1.render(svg);
+      this.player2.render(svg);
 
-        this.ball.render(svg, this.player1, this.player2);
+      this.ball.render(svg, this.player1, this.player2);
 
-        this.score1.render(svg, this.player1.score)
-        this.score2.render(svg, this.player2.score)
+      this.score1.render(svg, this.player1.score)
+      this.score2.render(svg, this.player2.score)
 
-        // if player wants to pause the game
-    }
+      // if(this.player1.score === 3){
+      //   alert("Player 1 has won")
+      // }
+
+      // if(this.player2.score === 3){
+      //   alert("Player 2 has won")
+      // }
+  }
 
 }
 

@@ -1,4 +1,5 @@
 import {SVG_NS} from '../settings'
+import { url } from 'inspector';
 
 export default class Board {
     
@@ -14,7 +15,7 @@ export default class Board {
 
         rect.setAttributeNS(null, 'width', this.width)
         rect.setAttributeNS(null, 'height', this.height)
-        rect.setAttributeNS(null, 'fill', '#1390900')
+        rect.setAttributeNS(null, 'fill', url('https://media.giphy.com/media/XbsB79zhtQB9eUsBaU/giphy.gif') )
 
         let line = document.createElementNS(SVG_NS, 'line')
         //your code here
